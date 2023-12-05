@@ -12,3 +12,7 @@ loop:
         andi $t1, $t0, 1      # Perform bitwise AND with 1 to check if it's odd
         bne $t1, $zero, not_odd  # If the result is not zero, then it's odd
         
+
+        # If the number is a multiple of 5, then print it
+        andi $t1, $t0, 0x7    # Perform bitwise AND with 7 to check if it's a multiple of 5
+        bne $t1, $zero, print_number
