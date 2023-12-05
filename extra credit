@@ -16,3 +16,21 @@ loop:
         # If the number is a multiple of 5, then print it
         andi $t1, $t0, 0x7    # Perform bitwise AND with 7 to check if it's a multiple of 5
         bne $t1, $zero, print_number
+ j not_odd             # Jump to not_odd if it's not a multiple of 5
+
+    print_number:
+        li $v0, 1            
+        move $a0, $t0        
+        syscall
+
+        li $v0, 4            
+        la $a0, newline       
+        syscall
+
+    not_odd:
+        addi $t0, $t0, 2      # Increment the counter by 2 (skip even numbers)
+        j loop                # then Repeat the loop
+
+    exit:
+        li $v0, 10           # Exit program
+        syscall
