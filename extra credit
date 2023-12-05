@@ -4,4 +4,8 @@
 .text
     main:
         li $t0, 1           # Initializes a counter to 1
+
+loop:
+        beq $t0, 101, exit   # Exit the loop if the counter is greater than 100
+        
         
