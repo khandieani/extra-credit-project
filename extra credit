@@ -1,0 +1,7 @@
+.data
+    newline:    .asciiz "\n"
+
+.text
+    main:
+        li $t0, 1           # Initializes a counter to 1
+        
